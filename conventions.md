@@ -2,7 +2,7 @@
 
 > Documento de referência para padronização do desenvolvimento frontend.  
 > Stack: **React + TypeScript**  
-> Atualizado por: _[seu nome]_ | Versão: 1.0.0
+> Atualizado por: _[Rafael Mendes]_ | Versão: 1.0.0
 
 ---
 

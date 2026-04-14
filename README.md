@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# labsys
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend do sistema **labsys**, construído com React + TypeScript + Vite.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **TypeScript**
+- **Vite** — bundler e dev server
+- **Tailwind CSS** — estilização
+- **TanStack Query** — cache e sincronização de dados com a API
+- **Zustand** — estado global
+- **React Hook Form** + **Zod** — formulários e validação
+- **Axios** — cliente HTTP com instância centralizada
+- **React Router v7** — roteamento
 
-## React Compiler
+## Pré-requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js >= 20
+- pnpm >= 9
 
-## Expanding the ESLint configuration
+## Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Variáveis de ambiente
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Copie o arquivo de exemplo e preencha os valores:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cp .env.example .env
 ```
+
+| Variável       | Descrição            | Padrão                      |
+| -------------- | -------------------- | --------------------------- |
+| `VITE_API_URL` | URL base da API REST | `http://localhost:3000/api` |
+
+## Scripts
+
+| Comando              | Descrição                             |
+| -------------------- | ------------------------------------- |
+| `pnpm dev`           | Inicia o servidor de desenvolvimento  |
+| `pnpm build`         | Build de produção                     |
+| `pnpm preview`       | Serve o build de produção localmente  |
+| `pnpm test`          | Roda os testes em modo watch          |
+| `pnpm test:run`      | Roda os testes uma única vez          |
+| `pnpm test:coverage` | Gera relatório de cobertura           |
+| `pnpm lint`          | Verifica linting                      |
+| `pnpm lint:fix`      | Corrige erros de lint automaticamente |
+| `pnpm typecheck`     | Verifica tipos TypeScript             |
+| `pnpm format`        | Formata o código com Prettier         |
+
+## Estrutura de pastas
+
+```
+src/
+├── assets/         # Imagens e ícones estáticos
+├── components/
+│   ├── ui/         # Primitivos do Design System (Button, Input…)
+│   └── shared/     # Componentes compostos reutilizáveis (Header, Sidebar…)
+├── features/       # Módulos por domínio de negócio
+├── hooks/          # Custom hooks globais
+├── pages/          # Páginas e rotas
+├── services/       # Instância Axios e funções de API globais
+├── store/          # Estado global (Zustand)
+├── styles/         # Tokens CSS e tema global
+├── types/          # Tipos e interfaces globais
+└── utils/          # Funções utilitárias puras
+```
+
+## Qualidade de código
+
+O projeto usa Husky para automatizar verificações em cada commit/push:
+
+| Hook         | O que roda                 |
+| ------------ | -------------------------- |
+| `pre-commit` | ESLint + Prettier (staged) |
+| `commit-msg` | Commitlint                 |
+| `pre-push`   | Testes unitários           |
+
+As mensagens de commit seguem o padrão **Conventional Commits** em português:
+
+```
+feat(auth): adiciona fluxo de login
+fix(dashboard): corrige cálculo de totais
+chore: atualiza dependências
+```
+
+Veja [conventions.md](conventions.md) para o guia completo de convenções do projeto.
