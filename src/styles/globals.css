@@ -1,0 +1,31 @@
+/* ─── LabSys Brand Tokens ─────────────────────────────────────────────────── */
+
+@theme {
+  /* Primary palette (teal/green) */
+  --color-primary: #0c5044;
+  --color-primary-mid: #1d9e75;
+  --color-primary-light: #5dcaa5;
+  --color-primary-bg: #e1f5ee;
+
+  /* Neutral palette */
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #5f5e5a;
+  --color-surface: #f5f5f3;
+  --color-white: #ffffff;
+}
+
+/* ─── CSS Custom Properties (for use outside Tailwind utilities) ──────────── */
+
+:root {
+  /* Primary */
+  --color-primary: #0c5044;
+  --color-primary-mid: #1d9e75;
+  --color-primary-light: #5dcaa5;
+  --color-primary-bg: #e1f5ee;
+
+  /* Neutral */
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #5f5e5a;
+  --color-surface: #f5f5f3;
+  --color-white: #ffffff;
+}
