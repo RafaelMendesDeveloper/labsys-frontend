@@ -4,7 +4,8 @@
       "Bash(chmod +x \"c:/Users/mendes.rafael/Desktop/labsys/labsys/.husky/_/commit-msg\")",
       "Bash(chmod +x \"c:/Users/mendes.rafael/Desktop/labsys/labsys/.husky/_/pre-push\")",
       "Bash(chmod +x \"c:/Users/mendes.rafael/Desktop/labsys/labsys/.husky/_/commit-msg\" \"c:/Users/mendes.rafael/Desktop/labsys/labsys/.husky/_/pre-push\" \"c:/Users/mendes.rafael/Desktop/labsys/labsys/.husky/_/husky.sh\")",
-      "Bash(chmod +x \"c:/Users/mendes.rafael/Desktop/labsys/labsys/.husky/pre-commit\")"
+      "Bash(chmod +x \"c:/Users/mendes.rafael/Desktop/labsys/labsys/.husky/pre-commit\")",
+      "Bash(npm --version)"
     ]
   }
 }
